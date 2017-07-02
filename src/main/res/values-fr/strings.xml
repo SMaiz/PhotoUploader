@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PhotoUploader</string>
+    <string name="choisir_photo">Choisir une photo</string>
+    <string name="send">envoyer</string>
+    <string name="options_settings">Préférences</string>
+    <string name="address">adresse</string>
+    <string name="address_def">http://exemple.com/script.php</string>
+    <string name="address_desc">L\'adresse du script auquel envoyer l\'image</string>
+    <string name="filename">Nom du fichier</string>
+    <string name="filename_def">image</string>
+    <string name="filename_desc">Le nom donné à l\'image dans les données POST</string>
+    <string name="cancel">annuler</string>
+    <string name="cancelled">Annulée</string>
+    <string name="success">Succès</string>
+    <string name="not_chosed">Aucune image sélectionnée</string>
+    <string name="failure">Échec</string>
+</resources>

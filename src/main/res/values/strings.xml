@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PhotoUploader</string>
+    <string name="choisir_photo">Pick a photo</string>
+    <string name="send">send</string>
+    <string name="options_settings">Settings</string>
+    <string name="address">address</string>
+    <string name="address_desc">The address of the script that will proceed the file</string>
+    <string name="address_def">http://example.com/script.php</string>
+    <string name="filename">filename</string>
+    <string name="filename_def">image</string>
+    <string name="filename_desc">The name given in the POST datas</string>
+    <string name="cancel">cancel</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="success">Success</string>
+    <string name="not_chosed">No image chosed</string>
+    <string name="failure">Failure</string>
+</resources>

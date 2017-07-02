@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="address"
+        android:title="@string/address"
+        android:summary="@string/address_desc"
+        android:defaultValue="@string/address_def" />
+
+    <EditTextPreference
+        android:key="filename"
+        android:title="@string/filename"
+        android:summary="@string/filename_desc"
+        android:defaultValue="@string/filename_def" />
+
+</PreferenceScreen>
