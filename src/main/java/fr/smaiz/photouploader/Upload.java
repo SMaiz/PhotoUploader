@@ -1,8 +1,7 @@
 package fr.smaiz.photouploader;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
@@ -15,7 +14,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -26,11 +24,27 @@ public class Upload extends AsyncTask<Object, Void, String> {
     public final String BOUNDARY = "****___SMaiz@smaiz.fr___****";
     public final String CRLF = "\r\n";
 
-    private MainActivity context = null;
+    private Activity context = null;
     private boolean ok = false;
 
     public Upload(MainActivity context_p) {
         context = context_p;
+    }
+
+    public Upload(ShareActivity context_p) {
+        context = context_p;
+    }
+
+    public void loading(boolean load) {
+        if (context.getClass() == MainActivity.class) {
+            ((MainActivity) context).loading(load);
+        }
+    }
+
+    public void showText(String txt) {
+        if (context.getClass() == MainActivity.class) {
+            ((MainActivity) context).showText(txt);
+        }
     }
 
     public byte[] getImgbytes(Bitmap img) {
@@ -58,24 +72,24 @@ public class Upload extends AsyncTask<Object, Void, String> {
     }
 
     protected void onPreExecute() {
-        context.loading(true);
+        loading(true);
     }
 
     protected void onPostExecute(String obj) {
         if (ok) {
             Toast.makeText(context, R.string.success, Toast.LENGTH_LONG).show();
-            context.loading(false);
+            loading(false);
         }
         else {
             Toast.makeText(context, R.string.failure, Toast.LENGTH_LONG).show();
-            context.loading(false);
+            loading(false);
         }
-        context.showText(obj);
+        showText(obj);
     }
 
     protected void onCancelled() {
         Toast.makeText(context, R.string.cancelled, Toast.LENGTH_LONG).show();
-        context.loading(false);
+        loading(false);
     }
 
     protected String doInBackground(Object... args) {
